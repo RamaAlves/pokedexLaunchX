@@ -1,0 +1,216 @@
+
+.pageRight{
+    width: 320px;
+    height: 420px;
+    background-color: black;
+    clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%,68% 10%);
+    padding: 1.5px;
+    align-self: flex-end;
+    
+    .container-pageRight{
+        clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%,68% 10%);
+        background-color: red;
+        min-width: 100%;
+        height: 100%;
+        padding: 10px;
+        
+        .outside{
+            background-color: black;
+            clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%,68% 10%);
+            width: 100%;
+            height: 400px;
+            padding: 1.5px;
+            
+            .inside{
+                clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%,68% 10%);
+                background-color: red;
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                padding-top: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .display{
+                    width: 100%;
+                    height: 100px;
+                    border: 1px solid black;
+                    border-radius: 8px;
+                    background-color: black;
+                    color:antiquewhite;
+                    padding: 16px;
+                    line-height: 2rem;
+                    overflow: auto;
+
+                }
+                
+                .container-options{
+                    .container-btn{
+                        display: grid;
+                        /* background-color: black; */
+                        grid-template-columns: 50px 50px 50px 50px 50px;
+                        grid-template-rows: 30px 30px;
+                        gap: 1px;
+                        padding: 2px;
+                        /* border: 2px solid black; */
+                        border-radius: 4px;
+                        
+                        .btn-op{
+                            cursor: pointer;
+                            background-color: aqua;
+                            border: 1px solid #109b9b;
+                            box-shadow: 1px 1px 1px black;
+                            font-size: 16px;
+                            &:hover{
+                                background-color: rgb(3, 238, 238);
+                            }
+                            &:focus{
+                                background-color: aqua;
+                            }
+                        }
+                        .btn-op:nth-child(1){
+                            border-top-left-radius: 4px;
+                        }
+                        .btn-op:nth-child(4){
+                            font-size: 10px;
+                        }
+                        .btn-op:nth-child(5){
+                            border-top-right-radius: 4px;
+                            font-size: 10px;
+                        }
+                        .btn-op:nth-child(6){
+                            border-bottom-left-radius: 4px;
+                        }
+                        
+                        .btn-op:nth-child(10){
+                            border-bottom-right-radius: 4px;
+                        }
+                    }
+                    .decorators{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 20px;
+                        padding-left: 30px;
+                        padding-right: 20px;
+                        .circles{
+                            display:flex;
+                            gap: 5px;
+                            .circle{
+                                width: 7px;
+                                height: 7px;
+                                border-radius: 50%;
+                                background-color: rgb(209, 3, 3);
+                                border: 1px solid black;
+                            }
+                        }
+                        .lines{
+                            display: flex;
+                            gap: 5px;
+                            .line{
+                                height: 5px;
+                                width: 40px;
+                                background-color: black;
+                                border-radius: 12px;
+                            }
+                        }
+                    }
+                    .searching{
+                        .circles{
+                            .circle:nth-child(1){
+                                animation: .3s searchingRed infinite linear;
+                            }
+                            .circle:nth-child(2){
+                                animation: .3s searchingRed infinite linear;
+                                animation-delay: .5s;
+                            }
+                        }
+                        .lines{
+                            .line:nth-child(1){
+                                animation: .3s changeBgColor infinite alternate;
+                            }
+                            .line:nth-child(2){
+                                animation: .3s changeBgColor infinite alternate;
+                                animation-delay: .1s;
+                            }
+                        }
+                    }
+                    .found{
+                        .circles{
+                            .circle{
+                                animation: .4s searchingRed linear;
+                                animation-iteration-count:3;
+                            }
+                        }
+                        .lines{
+                            .line{
+                                background-color: #dedede;
+                            }
+                        }
+                    }
+                }
+
+                .container-aux{
+                    display:flex;
+                    width: 90%;
+                    height: 80px;
+                    justify-content: space-between;
+                    padding-right: 20px;
+                    .container-aux-btn{
+                        display: flex;
+                        .btn-aux{
+                            cursor: pointer;
+                            width: 50px;
+                            height: 30px;
+                            font-size: 8px;
+                            background-color: aliceblue;
+                            border: 1px solid black;
+                            box-shadow: 1px 1px 1px black;
+                            &:hover{
+                                background-color: rgb(220, 224, 228);
+                            }
+                        }
+                        .btn-aux:nth-child(1){
+                            border-bottom-left-radius: 4px;
+                            border-top-left-radius: 4px;
+                        }
+                        .btn-aux:nth-child(2){
+                            border-bottom-right-radius: 4px;
+                            border-top-right-radius: 4px;
+                        }
+                    }
+                    .random{
+                        cursor: pointer;
+                        align-self:center;
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        background-color: #ffff41;
+                        border: 1px solid black;
+                        font-size: 12px;
+                        &:hover{
+                            background-color: #e4e434;
+                        }
+                    }
+                }
+
+                .container-size{
+                    display: flex;
+                    gap: 20px;
+                    .display-size{
+                        width: 120px;
+                        height: 40px;
+                        background-color: black;
+                        border-radius: 8px;
+                        color:white;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+
+
+    } 
+}

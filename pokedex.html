@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex LaunchX</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="./pokedex.js"></script>
+</head>
+<body>
+    <div class="page">
+        <main class="pokedex" id="pokedex-main">
+            <div class="container-leds" id="auxiliar-leds-principal">
+                <div class="circle-led"></div>
+                <div class="circle-led"></div>
+                <div class="circle-led"></div>
+            </div>
+            <div class="container-color">
+                <div class="background"></div>
+                <section class="pageLeft">
+                    <div class="container-pageLeft">
+                        <div class="container-border">
+                            <h1>Pokedex</h1>
+                            <div class="container-photo">
+                                <div class="circle-container-photo">
+                                    <div class="circle-color-photo"></div>
+                                    <div class="circle-color-photo"></div>
+                                </div>
+                                <div class="photo-border">
+                                    <img src="./Assets/pokeball.png" alt="Pokemon" id="pokeImg" width="150px">
+                                </div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="container-selector">
+                                <form class="container-search">
+                                    <button class="search" id="btn-search">🔍</button>
+                                    <input class="name" type="text" placeholder="pikachu" id="pokeName" name="pokeName">
+                                </form>
+                                <!-- <p id="name" name="name">Sin identificar</p> -->
+                                <div class="navigator">
+                                    <button class="btn-nav up">⬆</button>
+                                    <button class="btn-nav right">➡</button>
+                                    <div class="btn-nav center">
+                                        <button class="btn-nav circle"></button>
+                                    </div>
+                                    <button class="btn-nav down">⬇</button>
+                                    <button class="btn-nav left">⬅</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="divisor-pages"></div>
+            <section class="pageRight">
+                <div class="container-pageRight">
+                    <div class="outside">
+                        <div class="inside">
+                            <div class="display" id="displayExt" name="displayExt"><p>todo listo para que busques un pokemon</p></div>
+                            <div class="container-options">
+                                <div class="container-btn">
+                                    <button class="btn-op" id="btn-abilities">🛠</button>
+                                    <button class="btn-op" id="btn-moves">⚔</button>
+                                    <button class="btn-op" id="btn-stats">🛡</button>
+                                    <button class="btn-op" id="btn-species">specie</button>
+                                    <button class="btn-op" id="btn-types">type</button>
+                                    <button class="btn-op" id="btn-male">♂</button>
+                                    <button class="btn-op" id="btn-female">♀</button>
+                                    <button class="btn-op shiny" id="btn-shiny-male">♂</button>
+                                    <button class="btn-op shiny" id="btn-shiny-female">♀</button>
+                                    <button class="btn-op" id="btn-location">🗺</button>
+                                </div>
+                                <div class="decorators" id="decorators">
+                                    <div class="circles">
+                                        <div class="circle"></div>
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="lines">
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-aux">
+                                <div class="container-aux-btn">
+                                    <button class="btn-aux" id="btn-aux-1">mega evolucion</button>
+                                    <button class="btn-aux" id="btn-aux-2">gmax</button>
+                                </div>
+                                <button class="random" id="btn-random">↻</button>
+                            </div>
+                            <div class="container-size">
+                                <p class="display-size" id="size">altura</p>
+                                <p class="display-size" id="weight">peso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

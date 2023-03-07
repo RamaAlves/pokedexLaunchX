@@ -1,0 +1,27 @@
+@import "containerSelector";
+@import "containerPhoto";
+
+.pageLeft{
+    width: 300px;
+    height: 400px;
+/*     background-color: rgb(102, 233, 90); */
+    .container-pageLeft{
+        background-color: black;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%, 32% 10%, 60% 0);
+        padding: 1.5px;
+        height: 100%;
+        width: 300px;
+        .container-border{
+            min-height: 100%;
+            width: 100%;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%, 32% 10%, 60% 0);
+            background-color: red;
+            padding: 10px;
+            h1{
+                text-align: right;
+                margin-right: 10px;
+            }
+        }
+    }
+
+}

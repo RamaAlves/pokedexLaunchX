@@ -1,0 +1,141 @@
+@import "variables";
+@import "animations";
+@import "pageLeft";
+@import "pageRight";
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Michroma', sans-serif;
+}
+
+html {
+    body{
+        height: 100vh;
+        width: 100%;
+        background-image: url('../Assets/bg-grass.jpg');
+        background-size: contain;
+        background-repeat: repeat-x;
+        
+        .page{
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top:5%;
+            align-items: flex-start;
+            .pokedex{
+                position: relative;
+                display: flex;
+    /*             background-color: rebeccapurple; */
+                width: fit-content;
+                margin: 60px auto;
+                justify-content: space-evenly;
+                gap: 0.5px;
+    
+                &:before{
+                    position:absolute;
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    top:10px;
+                    left: 30px;
+                    border-radius: 50%;
+                    background-color: #cfcfcf;
+                    border: 2px solid black;
+                }
+                //34c6da
+                &:after{
+                    position:absolute;
+                    content: "";
+                    width: 26px;
+                    height: 26px;
+                    top:17px;
+                    left: 37px;
+                    border-radius: 50%;
+                    background-color: #27a2b3;
+                    border: 2px solid black;
+                }
+                .container-leds{
+                    position:absolute;
+                    display: flex;
+                    left: 85px;
+                    top:12px;
+                    gap: 8px;
+                    .circle-led{
+                        width: 10px;
+                        height: 10px;
+                        border:2px solid black;
+                        border-radius: 50%;
+                    }
+                    .circle-led:nth-child(1){
+                        background-color: #ff0000;
+                    }
+                    .circle-led:nth-child(2){
+                        background-color: #f7e600;
+                    }
+                    .circle-led:nth-child(3){
+                        background-color: #2de707;
+                    }
+                }
+                .animation-search{
+                    .circle-led:nth-child(1){
+                        animation: 1s searchingRed infinite linear;
+                    }
+                    .circle-led:nth-child(2){
+                        animation: 1s searchingYellow infinite linear;
+                        animation-delay: .3s;
+                    }
+                    .circle-led:nth-child(3){
+                        animation: 1s searchingGreen infinite linear;
+                        animation-delay: .6s;
+                    }   
+                }
+                .container-color{
+                    background-color: red;
+                    width: fit-content;
+                    padding: 20px;
+                    padding-top: 30px;
+    
+                    .background{
+                        position:absolute;
+                        background-color: #bb0202;
+                        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 9.5%, 32% 9.5%, 60% 0);
+                        width: 350px;
+                        height: 420px;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+                .divisor-pages{
+                    position:absolute;
+                    width: 20px;
+                    height: 420px;
+                    left: 320px;
+                    top:30px;
+                    border: 1.5px solid black;
+                    border-radius: 4px;
+                    background-color: #bb0202;
+                    box-shadow: 0px 0px 5px #9e0303;
+                }
+            }
+            .searching-led{
+                &:after{
+                    animation: .8s searchingLightBlue infinite ease-in-out;
+                }
+            }
+            .found{
+                &:after{
+                    animation: .5s foundPokemon ease;
+                    animation-iteration-count: 3;
+                }    
+            }
+            .error{
+                &:after{
+                    animation: .4s notFoundPokemon 2 linear;
+                }    
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+
+@keyframes searchingRed {
+    0%{
+        background-color: #ff0000;
+        filter: drop-shadow(0px 0px 4px #fc3e3e);
+        border-color: #670202;
+    }
+    50%{
+        // background-color: #c60000;
+        background-color: #670202;
+        border-color: black;
+    }
+    100%{
+        background-color: #ff0000;
+        filter: drop-shadow(0px 0px 4px #fc3e3e);
+        border-color: #670202;
+    }
+}
+@keyframes searchingYellow {
+    0%{
+        background-color: #f7e600;
+        filter: drop-shadow(0px 0px 4px #f7ea33);
+        border-color: #766e00;
+    }
+    50%{
+        // background-color: #e7ce15;
+        background-color: #766e00;
+        border-color: black;
+    }
+    100%{
+        background-color: #f7e600;
+        filter: drop-shadow(0px 0px 4px #f7ea33);
+        border-color: #766e00;
+    }
+}
+@keyframes searchingGreen {
+    0%{
+        background-color: #2de707;
+        filter: drop-shadow(0px 0px 4px #6aed50);
+        border-color: #106608;
+    }
+    50%{
+        // background-color: #32c116;
+        background-color: #106608;
+        border-color: black;
+    }
+    100%{
+        background-color: #2de707;
+        filter: drop-shadow(0px 0px 4px #6aed50);
+        border-color: #106608;
+    }
+}
+
+@keyframes searchingLightBlue{
+    0%{
+        background-color: #27a2b3;
+        border-color: black;
+    }
+    50%{
+        background-color: #24c8ff;
+        filter: drop-shadow(0px 0px 8px #5ad6ff);
+        border-color: #1986aa;
+    }
+    100%{
+        background-color: #208c9a;
+        border-color: black;
+    }
+}
+
+@keyframes foundPokemon{
+    0%{
+        background-color: #3abe85;
+        border-color: black;
+    }
+    50%{
+        background-color: #26ff00;
+        filter: drop-shadow(0px 0px 8px #7bfd65);
+        border-color: #18704a;
+    }
+    100%{
+        background-color: #3abe85;
+        border-color: black;
+    }
+}
+
+@keyframes notFoundPokemon {
+    0%{
+        background-color: #5a0e0e;
+        border-color: black;
+    }
+    50%{
+        background-color: #ff0000;
+        filter: drop-shadow(0px 0px 8px #e33030);
+        border-color: #440a0a;
+    }
+    100%{
+        background-color: #5a0e0e;
+        border-color: black;
+    }
+}
+
+
+@keyframes changeBgColor {
+    0%{
+        background-color: #164abb;
+    }
+    25%{
+        background-color: #f7ea33;
+    }
+    50%{
+        background-color: #ffffff;
+    }
+    75%{
+        background-color: #26ff00;
+    }
+    100%{
+        background-color: #8c00ff;
+    }
+}
+
+@keyframes foundBars {
+    
+}

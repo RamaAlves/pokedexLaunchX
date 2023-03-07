@@ -1,0 +1,193 @@
+.pageRight {
+  width: 320px;
+  height: 420px;
+  background-color: black;
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  padding: 1.5px;
+  align-self: flex-end;
+}
+.pageRight .container-pageRight {
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  background-color: red;
+  min-width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.pageRight .container-pageRight .outside {
+  background-color: black;
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  width: 100%;
+  height: 400px;
+  padding: 1.5px;
+}
+.pageRight .container-pageRight .outside .inside {
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.pageRight .container-pageRight .outside .inside .display {
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: black;
+  color: antiquewhite;
+  padding: 16px;
+  line-height: 2rem;
+  overflow: auto;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn {
+  display: grid;
+  /* background-color: black; */
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-rows: 30px 30px;
+  gap: 1px;
+  padding: 2px;
+  /* border: 2px solid black; */
+  border-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op {
+  cursor: pointer;
+  background-color: aqua;
+  border: 1px solid #109b9b;
+  box-shadow: 1px 1px 1px black;
+  font-size: 16px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:hover {
+  background-color: rgb(3, 238, 238);
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:focus {
+  background-color: aqua;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(1) {
+  border-top-left-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(4) {
+  font-size: 10px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(5) {
+  border-top-right-radius: 4px;
+  font-size: 10px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(6) {
+  border-bottom-left-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(10) {
+  border-bottom-right-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .circles {
+  display: flex;
+  gap: 5px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .circles .circle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgb(209, 3, 3);
+  border: 1px solid black;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .lines {
+  display: flex;
+  gap: 5px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .lines .line {
+  height: 5px;
+  width: 40px;
+  background-color: black;
+  border-radius: 12px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .circles .circle:nth-child(1) {
+  animation: 0.3s searchingRed infinite linear;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .circles .circle:nth-child(2) {
+  animation: 0.3s searchingRed infinite linear;
+  animation-delay: 0.5s;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .lines .line:nth-child(1) {
+  animation: 0.3s changeBgColor infinite alternate;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .lines .line:nth-child(2) {
+  animation: 0.3s changeBgColor infinite alternate;
+  animation-delay: 0.1s;
+}
+.pageRight .container-pageRight .outside .inside .container-options .found .circles .circle {
+  animation: 0.4s searchingRed linear;
+  animation-iteration-count: 3;
+}
+.pageRight .container-pageRight .outside .inside .container-options .found .lines .line {
+  background-color: #dedede;
+}
+.pageRight .container-pageRight .outside .inside .container-aux {
+  display: flex;
+  width: 90%;
+  height: 80px;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn {
+  display: flex;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux {
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  font-size: 8px;
+  background-color: aliceblue;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px black;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux:hover {
+  background-color: rgb(220, 224, 228);
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux:nth-child(1) {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux:nth-child(2) {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .random {
+  cursor: pointer;
+  align-self: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffff41;
+  border: 1px solid black;
+  font-size: 12px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .random:hover {
+  background-color: #e4e434;
+}
+.pageRight .container-pageRight .outside .inside .container-size {
+  display: flex;
+  gap: 20px;
+}
+.pageRight .container-pageRight .outside .inside .container-size .display-size {
+  width: 120px;
+  height: 40px;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  padding: 10px;
+}/*# sourceMappingURL=pageRight.css.map */

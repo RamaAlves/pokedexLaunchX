@@ -1,0 +1,623 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@keyframes searchingRed {
+  0% {
+    background-color: #ff0000;
+    filter: drop-shadow(0px 0px 4px #fc3e3e);
+    border-color: #670202;
+  }
+  50% {
+    background-color: #670202;
+    border-color: black;
+  }
+  100% {
+    background-color: #ff0000;
+    filter: drop-shadow(0px 0px 4px #fc3e3e);
+    border-color: #670202;
+  }
+}
+@keyframes searchingYellow {
+  0% {
+    background-color: #f7e600;
+    filter: drop-shadow(0px 0px 4px #f7ea33);
+    border-color: #766e00;
+  }
+  50% {
+    background-color: #766e00;
+    border-color: black;
+  }
+  100% {
+    background-color: #f7e600;
+    filter: drop-shadow(0px 0px 4px #f7ea33);
+    border-color: #766e00;
+  }
+}
+@keyframes searchingGreen {
+  0% {
+    background-color: #2de707;
+    filter: drop-shadow(0px 0px 4px #6aed50);
+    border-color: #106608;
+  }
+  50% {
+    background-color: #106608;
+    border-color: black;
+  }
+  100% {
+    background-color: #2de707;
+    filter: drop-shadow(0px 0px 4px #6aed50);
+    border-color: #106608;
+  }
+}
+@keyframes searchingLightBlue {
+  0% {
+    background-color: #27a2b3;
+    border-color: black;
+  }
+  50% {
+    background-color: #24c8ff;
+    filter: drop-shadow(0px 0px 8px #5ad6ff);
+    border-color: #1986aa;
+  }
+  100% {
+    background-color: #208c9a;
+    border-color: black;
+  }
+}
+@keyframes foundPokemon {
+  0% {
+    background-color: #3abe85;
+    border-color: black;
+  }
+  50% {
+    background-color: #26ff00;
+    filter: drop-shadow(0px 0px 8px #7bfd65);
+    border-color: #18704a;
+  }
+  100% {
+    background-color: #3abe85;
+    border-color: black;
+  }
+}
+@keyframes notFoundPokemon {
+  0% {
+    background-color: #5a0e0e;
+    border-color: black;
+  }
+  50% {
+    background-color: #ff0000;
+    filter: drop-shadow(0px 0px 8px #e33030);
+    border-color: #440a0a;
+  }
+  100% {
+    background-color: #5a0e0e;
+    border-color: black;
+  }
+}
+@keyframes changeBgColor {
+  0% {
+    background-color: #164abb;
+  }
+  25% {
+    background-color: #f7ea33;
+  }
+  50% {
+    background-color: #ffffff;
+  }
+  75% {
+    background-color: #26ff00;
+  }
+  100% {
+    background-color: #8c00ff;
+  }
+}
+@keyframes foundBars {}
+.container-selector {
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.container-selector .container-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 150px;
+  height: 100%;
+}
+.container-selector .container-search .search {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  background-color: black;
+  align-self: flex-start;
+  justify-self: start;
+  transition: all 0.3s ease;
+}
+.container-selector .container-search .search:hover {
+  color: #dedede;
+  background-color: #474747;
+}
+.container-selector .container-search .name {
+  padding-left: 5%;
+  align-self: flex-end;
+  justify-self: center;
+  width: 115px;
+  height: 50px;
+  background-color: rgb(85, 179, 67);
+  outline: none;
+  overflow: auto;
+}
+.container-selector .navigator {
+  justify-self: end;
+  display: grid;
+  padding: 4px;
+  grid-template-columns: 20px 20px 20px;
+  grid-template-rows: repeat(3, 20px);
+  color: black;
+  border-radius: 50%;
+}
+.container-selector .navigator .btn-nav {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: black;
+  transition: background-color 0.3s ease;
+}
+.container-selector .navigator .btn-nav:hover {
+  background-color: #dedede;
+}
+.container-selector .navigator .up {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+}
+.container-selector .navigator .right {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  border-bottom-right-radius: 25%;
+  border-top-right-radius: 25%;
+}
+.container-selector .navigator .center {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.container-selector .navigator .circle {
+  border-radius: 50%;
+  border: 1px solid #000;
+  width: 100%;
+  height: 100%;
+}
+.container-selector .navigator .down {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+.container-selector .navigator .left {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+}
+
+.container-photo {
+  position: relative;
+  margin: 10px auto;
+  margin-top: 20px;
+  width: 250px;
+  background-color: aliceblue;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%, 0 87%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%, 0 87%);
+  padding: 20px;
+  border: 1px solid black;
+}
+.container-photo:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(199, 28, 28);
+  border-radius: 100%;
+  left: 55px;
+  bottom: 5px;
+  border: 1px solid black;
+}
+.container-photo .circle-container-photo {
+  position: absolute;
+  width: 20px;
+  top: 7px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container-photo .circle-container-photo .circle-color-photo {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid black;
+}
+.container-photo .bar {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  right: 12px;
+  bottom: 10px;
+}
+.container-photo .bar:nth-child(5) {
+  right: 12px;
+  bottom: 10px;
+}
+.container-photo .bar:nth-child(3) {
+  right: 12px;
+  bottom: 14px;
+}
+.container-photo .bar:nth-child(4) {
+  right: 12px;
+  bottom: 6px;
+}
+.container-photo .photo-border {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%, 0 87%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%, 0 87%);
+  background-color: #97f2f8;
+  height: 160px;
+  width: 210px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-photo .photo-border img {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.pageLeft {
+  width: 300px;
+  height: 400px;
+  /*     background-color: rgb(102, 233, 90); */
+}
+.pageLeft .container-pageLeft {
+  background-color: black;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%, 32% 10%, 60% 0);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%, 32% 10%, 60% 0);
+  padding: 1.5px;
+  height: 100%;
+  width: 300px;
+}
+.pageLeft .container-pageLeft .container-border {
+  min-height: 100%;
+  width: 100%;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%, 32% 10%, 60% 0);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%, 32% 10%, 60% 0);
+  background-color: red;
+  padding: 10px;
+}
+.pageLeft .container-pageLeft .container-border h1 {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.pageRight {
+  width: 320px;
+  height: 420px;
+  background-color: black;
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  padding: 1.5px;
+  align-self: flex-end;
+}
+.pageRight .container-pageRight {
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  background-color: red;
+  min-width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.pageRight .container-pageRight .outside {
+  background-color: black;
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  width: 100%;
+  height: 400px;
+  padding: 1.5px;
+}
+.pageRight .container-pageRight .outside .inside {
+  -webkit-clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+          clip-path: polygon(100% 10%, 100% 100%, 0% 100%, 0% 0%, 38% 0%, 68% 10%);
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.pageRight .container-pageRight .outside .inside .display {
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: black;
+  color: antiquewhite;
+  padding: 16px;
+  line-height: 2rem;
+  overflow: auto;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn {
+  display: grid;
+  /* background-color: black; */
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-rows: 30px 30px;
+  gap: 1px;
+  padding: 2px;
+  /* border: 2px solid black; */
+  border-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op {
+  cursor: pointer;
+  background-color: aqua;
+  border: 1px solid #109b9b;
+  box-shadow: 1px 1px 1px black;
+  font-size: 16px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:hover {
+  background-color: rgb(3, 238, 238);
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:focus {
+  background-color: aqua;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(1) {
+  border-top-left-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(4) {
+  font-size: 10px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(5) {
+  border-top-right-radius: 4px;
+  font-size: 10px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(6) {
+  border-bottom-left-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .container-btn .btn-op:nth-child(10) {
+  border-bottom-right-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .circles {
+  display: flex;
+  gap: 5px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .circles .circle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgb(209, 3, 3);
+  border: 1px solid black;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .lines {
+  display: flex;
+  gap: 5px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .decorators .lines .line {
+  height: 5px;
+  width: 40px;
+  background-color: black;
+  border-radius: 12px;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .circles .circle:nth-child(1) {
+  animation: 0.3s searchingRed infinite linear;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .circles .circle:nth-child(2) {
+  animation: 0.3s searchingRed infinite linear;
+  animation-delay: 0.5s;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .lines .line:nth-child(1) {
+  animation: 0.3s changeBgColor infinite alternate;
+}
+.pageRight .container-pageRight .outside .inside .container-options .searching .lines .line:nth-child(2) {
+  animation: 0.3s changeBgColor infinite alternate;
+  animation-delay: 0.1s;
+}
+.pageRight .container-pageRight .outside .inside .container-options .found .circles .circle {
+  animation: 0.4s searchingRed linear;
+  animation-iteration-count: 3;
+}
+.pageRight .container-pageRight .outside .inside .container-options .found .lines .line {
+  background-color: #dedede;
+}
+.pageRight .container-pageRight .outside .inside .container-aux {
+  display: flex;
+  width: 90%;
+  height: 80px;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn {
+  display: flex;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux {
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  font-size: 8px;
+  background-color: aliceblue;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px black;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux:hover {
+  background-color: rgb(220, 224, 228);
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux:nth-child(1) {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .container-aux-btn .btn-aux:nth-child(2) {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .random {
+  cursor: pointer;
+  align-self: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffff41;
+  border: 1px solid black;
+  font-size: 12px;
+}
+.pageRight .container-pageRight .outside .inside .container-aux .random:hover {
+  background-color: #e4e434;
+}
+.pageRight .container-pageRight .outside .inside .container-size {
+  display: flex;
+  gap: 20px;
+}
+.pageRight .container-pageRight .outside .inside .container-size .display-size {
+  width: 120px;
+  height: 40px;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  padding: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Michroma", sans-serif;
+}
+
+html body {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../Assets/bg-grass.jpg");
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+html body .page {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  align-items: flex-start;
+}
+html body .page .pokedex {
+  position: relative;
+  display: flex;
+  /*             background-color: rebeccapurple; */
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 60px auto;
+  justify-content: space-evenly;
+  gap: 0.5px;
+}
+html body .page .pokedex:before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  left: 30px;
+  border-radius: 50%;
+  background-color: #cfcfcf;
+  border: 2px solid black;
+}
+html body .page .pokedex:after {
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 26px;
+  top: 17px;
+  left: 37px;
+  border-radius: 50%;
+  background-color: #27a2b3;
+  border: 2px solid black;
+}
+html body .page .pokedex .container-leds {
+  position: absolute;
+  display: flex;
+  left: 85px;
+  top: 12px;
+  gap: 8px;
+}
+html body .page .pokedex .container-leds .circle-led {
+  width: 10px;
+  height: 10px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+html body .page .pokedex .container-leds .circle-led:nth-child(1) {
+  background-color: #ff0000;
+}
+html body .page .pokedex .container-leds .circle-led:nth-child(2) {
+  background-color: #f7e600;
+}
+html body .page .pokedex .container-leds .circle-led:nth-child(3) {
+  background-color: #2de707;
+}
+html body .page .pokedex .animation-search .circle-led:nth-child(1) {
+  animation: 1s searchingRed infinite linear;
+}
+html body .page .pokedex .animation-search .circle-led:nth-child(2) {
+  animation: 1s searchingYellow infinite linear;
+  animation-delay: 0.3s;
+}
+html body .page .pokedex .animation-search .circle-led:nth-child(3) {
+  animation: 1s searchingGreen infinite linear;
+  animation-delay: 0.6s;
+}
+html body .page .pokedex .container-color {
+  background-color: red;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  padding-top: 30px;
+}
+html body .page .pokedex .container-color .background {
+  position: absolute;
+  background-color: #bb0202;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 9.5%, 32% 9.5%, 60% 0);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 9.5%, 32% 9.5%, 60% 0);
+  width: 350px;
+  height: 420px;
+  left: 0;
+  bottom: 0;
+}
+html body .page .pokedex .divisor-pages {
+  position: absolute;
+  width: 20px;
+  height: 420px;
+  left: 320px;
+  top: 30px;
+  border: 1.5px solid black;
+  border-radius: 4px;
+  background-color: #bb0202;
+  box-shadow: 0px 0px 5px #9e0303;
+}
+html body .page .searching-led:after {
+  animation: 0.8s searchingLightBlue infinite ease-in-out;
+}
+html body .page .found:after {
+  animation: 0.5s foundPokemon ease;
+  animation-iteration-count: 3;
+}
+html body .page .error:after {
+  animation: 0.4s notFoundPokemon 2 linear;
+}/*# sourceMappingURL=style.css.map */
