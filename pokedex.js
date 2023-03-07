@@ -758,7 +758,7 @@ const refreshDisplayExtra = (datos)=>{
 }
 
 const refreshSize=(dataSize)=>{
-    let size = Math.round(dataSize*2.54)
+    let size = Math.round(dataSize*10)
     if (size <100){
         displaySize.innerText= size + " cm";
     }
@@ -768,8 +768,8 @@ const refreshSize=(dataSize)=>{
 
 }
 const refreshWeight=(dataWeight)=>{
-    let weight = ((dataWeight*28.3495)/1000);
-    displayWeight.innerText= weight.toFixed(2)+" kgs";
+    let weight = ((dataWeight*100)/1000);
+    displayWeight.innerText= weight.toFixed(1)+" kgs";
 }
 
 //animaciones 
